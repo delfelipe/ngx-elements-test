@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ngx Elements Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="ngx-elements.js"></script>
+</head>
+<body>
+  <custom-button label="First value"></custom-button>
+  <script>
+    const button = document.querySelector('custom-button');
+    button.addEventListener('action', (event) => {
+        console.log(`"action" emitted: ${event.detail}`);
+    });
+    setTimeout(() => {
+      button.label = 'Second value';
+    }, 3000);
+  </script>
+</body>
+</html>
